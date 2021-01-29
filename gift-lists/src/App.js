@@ -1,11 +1,12 @@
 import Header from './components/main/Header'
-import ListCard from './components/list/ListCard'
 import React from 'react';
+import Home from './components/main/Home'
+
 function App() {
   return (
     <React.Fragment>
-      <Header></Header>
-      <ListCard></ListCard>
+      <Header title="Gift List"></Header>
+      <Home></Home>
     </React.Fragment>
   );
 }

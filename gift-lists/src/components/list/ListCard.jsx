@@ -1,12 +1,12 @@
 import React from 'react'
 
-function ListCard() {
+function ListCard(props) {
     return (
-        <div class="mdc-card mdc-card--outlined">
-            <div class="mdc-card__primary-action" tabindex="0">
-                <p>the actions</p>
+        <div className="mdc-card mdc-card--outlined">
+            <div className="mdc-card__primary-action" tabIndex="0">
+                <p>{props.url}</p>
             </div>
-            <p>The content</p>
+            <p>{props.name}</p>
         </div>
     )
 }
