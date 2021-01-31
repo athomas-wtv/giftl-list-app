@@ -1,13 +1,16 @@
 import Header from './components/main/Header'
 import React from 'react';
-import Home from './components/main/Home'
+import Home from './components/pages/Home'
+import Login from './components/pages/Login'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <React.Fragment>
-      <Header title="Gift List"></Header>
-      <Home></Home>
-    </React.Fragment>
+    <Router>
+      {/* <Header title="Gift List"></Header> */}
+        <Route path="/home" component={Home} />
+        <Route path="/login" component={Login} />
+      </Router>
   );
 }
 
