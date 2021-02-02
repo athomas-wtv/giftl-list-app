@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function LoginForm() {
     return (
@@ -10,7 +11,9 @@ function LoginForm() {
             <input id="password" name="password" type="password" placeholder="Password" />
             <br />
             <button>Login</button>
-            <button>Create Account</button>
+            <Link to="/createaccount">
+                <button>Create Account</button>
+            </Link>
         </React.Fragment>
     )
 }

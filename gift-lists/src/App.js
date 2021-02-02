@@ -2,14 +2,18 @@ import Header from './components/main/Header'
 import React from 'react';
 import Home from './components/pages/Home'
 import Login from './components/pages/Login'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import CreateAccount from './components/pages/CreateAccount'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {
   return (
     <Router>
       {/* <Header title="Gift List"></Header> */}
-        <Route path="/home" component={Home} />
+      <Switch>
+        <Route path="/createaccount" component={CreateAccount} />
         <Route path="/login" component={Login} />
+        <Route path="/" component={Home} />
+      </Switch>
       </Router>
   );
 }
