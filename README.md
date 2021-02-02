@@ -11,17 +11,27 @@ the person wants.
 ## Front End
 <img src="https://sledsworth.gallerycdn.vsassets.io/extensions/sledsworth/react-redux-es6-snippets/0.5.3/1530106605209/Microsoft.VisualStudio.Services.Icons.Default" alt="reactjs logo" width="100"/>
 <img src="https://seeklogo.com/images/M/material-ui-logo-5BDCB9BA8F-seeklogo.com.png" alt="material UI logo" width="100"/>
-<img src="https://s3-us-west-2.amazonaws.com/eaze-blog-assets-production/content/2018/01/10194834/axios-logo.png" alt="material UI logo" width="100"/>
+<img src="https://s3-us-west-2.amazonaws.com/eaze-blog-assets-production/content/2018/01/10194834/axios-logo.png" alt="material UI logo" width="200"/>
 
 The front end of this project is written in ReactJS. I choose this language because it's a very marketable skill to have. I currenly don't know it so,
 through this app, I am teaching myself. If it's not added yet at the time you're reading this, I will be adding Redux for state management, Axios to make http calls,
 and Material UI for design. MD UI will be added last. My main goal right now is to get the functionality in place because my personality tends to get
 hung up on the looks which can hinder progress.
 
+### Todo List
+* [ ] Implement Axios
+* [ ] Implement Redux
+* [ ] Implement Material UI
+
+
 ## Back End
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/1024px-.NET_Core_Logo.svg.png" alt=".NET Core logo" width="100"/>
+
 The back end API is .NET Core. I choose this because it's also marketable and I've only used it throughout my short dev career. I have grown to really like it.
 
 ## Database
+<img src="https://cdn.freebiesupply.com/logos/large/2x/mysql-5-logo-png-transparent.png" alt="mysql logo logo" width="100"/>
+
 The DB Management system I'm using is MySQL. I've worked in MSSQL and T-SQL in professional settings. I just thought I'd switch it up. The database is currently hosted on my own computer. I probably won't push it up to the cloud for a while if I do do it. We'll see.
 
 ## Assistance
