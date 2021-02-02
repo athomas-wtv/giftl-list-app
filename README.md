@@ -34,6 +34,10 @@ The back end API is .NET Core. I choose this because it's also marketable and I'
 
 The DB Management system I'm using is MySQL. I've worked in MSSQL and T-SQL in professional settings. I just thought I'd switch it up. The database is currently hosted on my own computer. I probably won't push it up to the cloud for a while if I do do it. We'll see.
 
+## Branches
+
+If you don't see any other branches, that's because I haven't reached a point where I would need them. I am currently laying down the foundation of my app's functionality. Once I start adding features, I'll utilize branches.
+
 ## Assistance
 Feel free to reach out to me if you have ideas on stucture or feature. This is a learning project to help better my skills. You can find me at the information below:
 
