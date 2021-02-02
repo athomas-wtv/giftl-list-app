@@ -9,6 +9,10 @@ could purchase it online. The user will then be able to email or text a link to 
 the person wants.
 
 ## Front End
+<img src="https://sledsworth.gallerycdn.vsassets.io/extensions/sledsworth/react-redux-es6-snippets/0.5.3/1530106605209/Microsoft.VisualStudio.Services.Icons.Default" alt="reactjs logo" width="100"/>
+<img src="https://seeklogo.com/images/M/material-ui-logo-5BDCB9BA8F-seeklogo.com.png" alt="material UI logo" width="100"/>
+<img src="https://s3-us-west-2.amazonaws.com/eaze-blog-assets-production/content/2018/01/10194834/axios-logo.png" alt="material UI logo" width="100"/>
+
 The front end of this project is written in ReactJS. I choose this language because it's a very marketable skill to have. I currenly don't know it so,
 through this app, I am teaching myself. If it's not added yet at the time you're reading this, I will be adding Redux for state management, Axios to make http calls,
 and Material UI for design. MD UI will be added last. My main goal right now is to get the functionality in place because my personality tends to get
@@ -24,6 +28,8 @@ The DB Management system I'm using is MySQL. I've worked in MSSQL and T-SQL in p
 Feel free to reach out to me if you have ideas on stucture or feature. This is a learning project to help better my skills. You can find me at the information below:
 
 [LinkedIn](https://linkedin.com/in/athomaswtv)
+
 [Email](mailto:athomas.wtv@gmail.com)
+
 [GitHub](https://github.com/athomas-wtv) - Hey, you're already here!
 
