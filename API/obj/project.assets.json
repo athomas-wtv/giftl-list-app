@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andrethomas/Sites/gift-list-backend/gift-list-backend.csproj",
+      "projectUniqueName": "/Users/andrethomas/Sites/gift-list-app/API/gift-list-backend.csproj",
       "projectName": "gift-list-backend",
-      "projectPath": "/Users/andrethomas/Sites/gift-list-backend/gift-list-backend.csproj",
+      "projectPath": "/Users/andrethomas/Sites/gift-list-app/API/gift-list-backend.csproj",
       "packagesPath": "/Users/andrethomas/.nuget/packages/",
-      "outputPath": "/Users/andrethomas/Sites/gift-list-backend/obj/",
+      "outputPath": "/Users/andrethomas/Sites/gift-list-app/API/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

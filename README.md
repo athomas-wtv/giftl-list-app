@@ -18,6 +18,9 @@ through this app, I am teaching myself. If it's not added yet at the time you're
 and Material UI for design. MD UI will be added last. My main goal right now is to get the functionality in place because my personality tends to get
 hung up on the looks which can hinder progress.
 
+### Disclaimer
+Much of the front end code is sloppy and thrown together for the sake of getting the functionality working. Don't judge me :)
+
 ### Todo List
 * [ ] Implement Axios
 * [ ] Implement Redux

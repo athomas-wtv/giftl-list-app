@@ -1,9 +1,27 @@
-import React from "react";
-import {Link} from 'react-router-dom'
+import React, {useState} from "react";
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import {Formik} from 'formik'
+
+const api = axios.create({
+    baseURL: 'https://localhost:5001'
+})
+
 
 function CreateAccountForm() {
-  return (
+        
+    function createUser()
+    {
+        // console.log("Boom! Handled.")
+        api.post('api/user/register', {})
+    };
+
+    return (
     <React.Fragment>
+        <Formik
+            initialValues={{firstName: '',lastName: '', emailAddress: '', address1: '', address2: '', city: '', state: '', postalCode: '',password: ''}}
+            onSubmit={createUser}
+        >
       <label>First Name</label>
       <input
         id="firstName"
@@ -62,8 +80,10 @@ function CreateAccountForm() {
       />
       <br />
       <Link to="/login">
-        <button>Create</button>
+        <button onClick={createUser}>Create</button>
       </Link>
+      </Formik>
+
     </React.Fragment>
   );
 }
