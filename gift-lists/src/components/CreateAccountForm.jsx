@@ -4,7 +4,8 @@ import axios from 'axios'
 import {Formik} from 'formik'
 
 const api = axios.create({
-    baseURL: 'https://localhost:5001'
+    baseURL: 'https://localhost:5001',
+    headers: { 'Access-Control-Allow-Origin': true }
 })
 
 
@@ -14,10 +15,10 @@ function CreateAccountForm() {
       <React.Fragment>
         <Formik
             initialValues={{firstName: '',lastName: '', emailAddress: '', address1: '', address2: '', city: '', state: '', postalCode: '',password: ''}}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(user, { setSubmitting }) => {
               // api.post()
-              console.log(values);
-              api.post('api/user/register', values).then(res => alert(res.data));
+              console.log(user);
+              api.post('api/user/register', user).then(res => alert(res.data));
             }}
         >
           {({values, handleChange, handleBlur, handleSubmit}) => (
