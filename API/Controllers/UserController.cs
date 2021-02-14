@@ -15,6 +15,6 @@ public class UserController : Controller
     public IActionResult AddUser([FromBody] User newUser)
     {
         // Add code to add user
-        return Ok();
+        return Ok(newUser);
     }
 }

@@ -10,7 +10,7 @@ function App() {
     <Router>
       {/* <Header title="Gift List"></Header> */}
       <Switch>
-        <Route path="/createaccount" component={CreateAccount} />
+        <Route path="/register" component={CreateAccount} />
         <Route path="/login" component={Login} />
         <Route path="/" component={Home} />
       </Switch>

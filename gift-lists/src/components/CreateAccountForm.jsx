@@ -14,23 +14,25 @@ function CreateAccountForm() {
     return (
       <React.Fragment>
         <Formik
-            initialValues={{firstName: '',lastName: '', emailAddress: '', address1: '', address2: '', city: '', state: '', postalCode: '',password: ''}}
+            initialValues={{firstName: '',lastName: '', emailAddress: '', userName:'', address1: '', address2: '', city: '', state: '', postalCode: '',password: ''}}
             onSubmit={(user, { setSubmitting }) => {
-              // api.post()
-              console.log(user);
-              api.post('api/user/register', user).then(res => alert(res.data));
+              var bcrypt = require('bcryptjs');
+              var salt = bcrypt.genSaltSync(10);
+              var hash = bcrypt.hashSync(user.password, salt);
+              user.password = hash;
+              api.post('api/user/register', user).then(res => alert(`${res.data.firstName}'s account created!`));
             }}
         >
           {({values, handleChange, handleBlur, handleSubmit}) => (
               <form onSubmit={handleSubmit}>
               <label>First Name</label>
-              <input id="firstName" name="firstName" type="text" value={values.firstName} placeholder="Your name" onChange={handleChange} onBlur={handleBlur} />
+              <input id="firstName" name="firstName" type="text" value={values.firstName} placeholder="First name" onChange={handleChange} onBlur={handleBlur} />
               <br />
               <label>Last Name</label>
-              <input id="lastName" name="lastName" type="text" value={values.lastName} onChange={handleChange} placeholder="Username"/>
+              <input id="lastName" name="lastName" type="text" value={values.lastName} onChange={handleChange} placeholder="Last name"/>
               <br />
               <label>Username</label>
-              <input id="username" name="username" type="text" value={values.userName} onChange={handleChange} placeholder="Username" />
+              <input id="userName" name="userName" type="text" value={values.userName} onChange={handleChange} placeholder="Username" />
               <br />
 
               <label>Email</label>
@@ -39,10 +41,11 @@ function CreateAccountForm() {
                 name="emailAddress"
                 type="email"
                 placeholder="Email"
+                value={values.emailAddress} onChange={handleChange}
               />
               <br />
               <label>Address</label>
-              <input id="address" name="address" type="text" placeholder="Address 1" />
+              <input id="address1" name="address1" type="text" placeholder="Address 1" value={values.address1} onChange={handleChange} />
               <br />
               <label>Address2</label>
               <input
@@ -50,20 +53,22 @@ function CreateAccountForm() {
                 name="address2"
                 type="text"
                 placeholder="Address 2"
+                value={values.address2} onChange={handleChange}
               />
               <br />
               <label>City</label>
-              <input id="city" name="city" type="text" placeholder="City" />
+              <input id="city" name="city" type="text" placeholder="City" value={values.city} onChange={handleChange} />
               <br />
               <label>State</label>
-              <input id="state" name="state" type="text" placeholder="State" />
+              <input id="state" name="state" type="text" placeholder="State" value={values.state} onChange={handleChange} />
               <br />
               <label>Postal Code</label>
               <input
-                id="postalCode`"
-                name="postalCode`"
-                type="number"
+                id="postalCode"
+                name="postalCode"
+                type="text"
                 placeholder="Zip Code"
+                value={values.postalCode} onChange={handleChange}
               />
               <br />
 
@@ -73,6 +78,7 @@ function CreateAccountForm() {
                 name="password"
                 type="password"
                 placeholder="Password"
+                value={values.password} onChange={handleChange}
               />
               <br />
               <Link to="/login">
