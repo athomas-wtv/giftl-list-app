@@ -20,7 +20,12 @@ function CreateAccountForm() {
               var salt = bcrypt.genSaltSync(10);
               var hash = bcrypt.hashSync(user.password, salt);
               user.password = hash;
-              api.post('api/user/register', user).then(res => alert(`${res.data.firstName}'s account created!`));
+              console.log(typeof user);
+              api.post('api/user/register', user).then(res => 
+                {
+                  alert(`${res.data.firstName}'s account created!`)
+                  console.log(res);
+                }, (error) => console.log(error));
             }}
         >
           {({values, handleChange, handleBlur, handleSubmit}) => (
@@ -82,7 +87,7 @@ function CreateAccountForm() {
               />
               <br />
               <Link to="/login">
-                <button onClick={handleSubmit}>Create</button>
+                <button type="button" onClick={handleSubmit}>Create</button>
               </Link>
               </form>
 
