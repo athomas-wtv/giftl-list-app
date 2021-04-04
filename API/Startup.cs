@@ -1,4 +1,5 @@
 using API.Services;
+using Data;
 using Interfaces.Users;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Services;
 
 namespace gift_list_backend
 {
@@ -34,9 +34,8 @@ namespace gift_list_backend
                     });
             });
 
-            services.AddDbContext<GiftContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            // services.AddDbContext<GiftContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))); 
+            services.AddDbContext<GiftContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserService, UserService>();
 
             services.AddControllers();

@@ -1,5 +1,7 @@
+using Data;
 using Interfaces.Users;
-using Services;
+using Microsoft.AspNetCore.Mvc;
+using Models.Users;
 
 namespace API.Services
 {
@@ -10,9 +12,11 @@ namespace API.Services
         {
             this.giftContext = giftContext;
         }
-        public void Register(IUser User)
+
+        public void RegisterUser(IUser user)
         {
-            throw new System.NotImplementedException();
+            this.giftContext.Users.Add((User)user);
+            this.giftContext.SaveChanges();
         }
     }
 }
