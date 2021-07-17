@@ -12,7 +12,6 @@ function App() {
     <Router>
       {/* <Header title="Gift List"></Header> */}
       <Switch>
-        <Route path="/test/:id" component={Test} />
         <Route path="/list/:id" component={List} />
         <Route path="/register" component={CreateAccount} />
         <Route path="/create" component={CreateList} />
