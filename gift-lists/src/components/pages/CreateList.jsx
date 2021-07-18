@@ -10,7 +10,10 @@ function CreateList() {
         headers: { 'Access-Control-Allow-Origin': true }
     })
 
-    const handleAddItemToList = () => setList([...list, item]);
+    const handleAddItemToList = () => {
+        setList([...list, item]);
+        setItem({ name: '', url: '' });
+    }
     const handleSaveList = () => {
         api.post('api/giftlist/create', list).then(res => {
             alert(`List created!`)
@@ -23,13 +26,19 @@ function CreateList() {
     return (
         <div>
             <h1>Create List</h1>
+            <ul>
+                {list.map(item => {
+                    return <li><b>Name:</b> {item.name} | <b>URl:</b> {item.url}</li>
+                })}
+            </ul>
+
             <label>Name</label>
             <input type="text" value={item.name} id="itemName" name="itemName" onChange={handleNameChange} />
             <br />
             <label>Url</label>
             <input type="url" value={item.url} id="itemUrl" name="itemUrl" onChange={handleUrlChange} />
             <br />
-            <button onClick={handleAddItemToList}>Add to List</button>
+            <button onClick={handleAddItemToList}>Add</button>
             <button onClick={handleSaveList}>Save List</button>
         </div>
     )

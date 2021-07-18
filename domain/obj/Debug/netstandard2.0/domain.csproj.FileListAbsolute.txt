@@ -6,3 +6,4 @@
 /Users/andrethomas/Sites/gift-list-app/domain/bin/Debug/netstandard2.0/domain.pdb
 /Users/andrethomas/Sites/gift-list-app/domain/obj/Debug/netstandard2.0/domain.dll
 /Users/andrethomas/Sites/gift-list-app/domain/obj/Debug/netstandard2.0/domain.pdb
+/Users/andrethomas/Sites/gift-list-app/domain/obj/Debug/netstandard2.0/domain.csproj.CoreCompileInputs.cache

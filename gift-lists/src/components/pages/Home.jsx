@@ -1,6 +1,8 @@
 import React from 'react'
 import ListCard from '../list/ListCard'
 import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles({
     root: {
@@ -61,7 +63,7 @@ function Home() {
                     return <ListCard key={list.id} {...list}></ListCard>
                 })}
             </div>
-            <button>Add List</button>
+            <Button size="small" variant="contained" color="secondary" href={`/create`}>Create List</Button>
         </React.Fragment>
     )
 }

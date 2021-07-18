@@ -1,4 +1,4 @@
-using API.Services;
+using System;
 using Interfaces.Users;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -18,13 +18,27 @@ public class UserController : ControllerBase
     [HttpGet, Route("test")]
     public string GetTest()
     {
-        return "Hello there good look'n!";
+        return "Hi, Earth!";
     }
 
     [HttpPost, Route("register")]
     public IActionResult RegisterUser([FromBody] User newUser)
     {
-        this.userService.RegisterUser(newUser);
-        return Ok();
+        if(newUser.PasswordHash == null)
+            newUser.PasswordHash = "asdfasffasdfasf";
+        
+        if(newUser.PasswordSalt == null)
+            newUser.PasswordSalt = "oijfsf";
+
+        try
+        {
+            this.userService.RegisterUser(newUser);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            // Console.WriteLine(ex.Message);
+            return Content(ex.Message);
+        }
     }
 }

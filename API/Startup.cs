@@ -1,3 +1,4 @@
+using System;
 using API.Services;
 using Data;
 using Interfaces.Users;
@@ -22,6 +23,7 @@ namespace gift_list_backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Allows this api to receive calls from the front end application
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -34,8 +36,13 @@ namespace gift_list_backend
                     });
             });
 
-            // services.AddDbContext<GiftContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))); 
-            services.AddDbContext<GiftContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<GiftContext>(
+                dbContextOptions => dbContextOptions
+                    .EnableSensitiveDataLogging() // <-- These two calls are optional but help
+                    .EnableDetailedErrors()       // <-- with debugging (remove for production).
+            );       
+
+            // services.AddDbContext<GiftContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserService, UserService>();
 
             services.AddControllers();

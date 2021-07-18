@@ -16,6 +16,18 @@ namespace Data
             this.configuration = configuration;
         }
 
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySQL(this.configuration.GetConnectionString("DefaultConnection"));
+        }   
+
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder.UseMySql(this.configuration.GetValue<string>("version"));
+        //     // optionsBuilder.UseMySql(this.configuration.GetValue<strSg().GetConnectionString("DefaultConnection"));
+        // }
+
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         // {
         //     if (!optionsBuilder.IsConfigured)

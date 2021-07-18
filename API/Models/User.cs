@@ -1,3 +1,4 @@
+using System;
 using Interfaces.Users;
 
 namespace Models.Users
@@ -13,7 +14,10 @@ namespace Models.Users
         public string Address2 { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        public string PostalCode { get; set; }
-        public string Password { get; set; }
+        public string Country { get; set; }
+        public int PostalCode { get; set; }
+        public string PasswordHash { get; set; }
+        public string PasswordSalt { get; set; }
+        public DateTime LastTimeLoggedIn { get; set; }
     }
 }

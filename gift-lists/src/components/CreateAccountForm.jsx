@@ -14,13 +14,17 @@ function CreateAccountForm() {
     return (
       <React.Fragment>
         <Formik
-            initialValues={{firstName: '',lastName: '', emailAddress: '', userName:'', address1: '', address2: '', city: '', state: '', postalCode: '',password: ''}}
+            initialValues={{firstName: '',lastName: '', emailAddress: '', userName:'', address1: '', address2: '', city: '', state: '', postalCode: 0,passwordHash: ''}}
             onSubmit={(user, { setSubmitting }) => {
               var bcrypt = require('bcryptjs');
               var salt = bcrypt.genSaltSync(10);
               var hash = bcrypt.hashSync(user.password, salt);
-              user.password = hash;
-              console.log(typeof user);
+              user.passwordHash = hash;
+              user.passwordSalt = salt;
+              user.country = "US";
+              user.postalCode = Number(user.postalCode);
+
+              console.log("User", user);
               api.post('api/user/register', user).then(res => 
                 {
                   alert(`${res.data.firstName}'s account created!`)

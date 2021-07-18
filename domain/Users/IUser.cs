@@ -1,3 +1,5 @@
+using System;
+
 namespace Interfaces.Users
 {
     public interface IUser
@@ -11,7 +13,10 @@ namespace Interfaces.Users
         string Address2 { get; set; }
         string City { get; set; }
         string State { get; set; }
-        string PostalCode { get; set; }
-        string Password { get; set; }
+        string Country { get; set; }
+        int PostalCode { get; set; }
+        string PasswordHash { get; set; }
+        string PasswordSalt { get; set; }
+        DateTime LastTimeLoggedIn { get; set; }
     }
 }

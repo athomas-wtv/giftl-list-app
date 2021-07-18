@@ -4,7 +4,7 @@ import Home from './components/pages/Home'
 import Login from './components/pages/Login'
 import CreateAccount from './components/pages/CreateAccount'
 import List from './components/pages/List'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import CreateList from './components/pages/CreateList';
 
 function App() {
